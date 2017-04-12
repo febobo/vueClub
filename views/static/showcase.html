@@ -1,0 +1,309 @@
+<%- partial( '../sidebar') %>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .row {
+      margin-left: -15px;
+      margin-right: -15px;
+      overflow: hidden;
+    }
+
+    .showcase-icon-row .col {
+      margin-bottom: 40px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+
+    .showcase-icon-row .row {
+      overflow: hidden;
+    }
+
+    .col-sm-3 {
+      width: 25%;
+    }
+
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11 {
+      float: left;
+    }
+
+    .col-xs-1,
+    .col-xs-2,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-5,
+    .col-xs-6,
+    .col-xs-7,
+    .col-xs-8,
+    .col-xs-9,
+    .col-xs-10,
+    .col-xs-11,
+    .col-xs-12,
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12,
+    .col-md-1,
+    .col-md-2,
+    .col-md-3,
+    .col-md-4,
+    .col-md-5,
+    .col-md-6,
+    .col-md-7,
+    .col-md-8,
+    .col-md-9,
+    .col-md-10,
+    .col-md-11,
+    .col-md-12,
+    .col-lg-1,
+    .col-lg-2,
+    .col-lg-3,
+    .col-lg-4,
+    .col-lg-5,
+    .col-lg-6,
+    .col-lg-7,
+    .col-lg-8,
+    .col-lg-9,
+    .col-lg-10,
+    .col-lg-11,
+    .col-lg-12 {
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+    }
+
+    .showcase-icon-row .col {
+      text-align: center;
+    }
+
+    .showcase-icon-row h3 {
+      color: #666;
+      margin-bottom: 4px;
+      font-size: 20px;
+    }
+
+    .showcase-icon-row p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .app .icon {
+      height: 115px;
+      margin: auto;
+      position: relative;
+      width: 115px;
+    }
+
+    .app img {
+      border-radius: 30px;
+      height: 115px;
+      width: 115px;
+    }
+
+    img {
+      vertical-align: middle;
+      border: 0 none;
+    }
+
+    .app .mask {
+      background: url("<%- staticFile('/public/images/showcase/app_mask@2x.png') %>") no-repeat scroll 0 0 / 115px 115px rgba(0, 0, 0, 0);
+    }
+
+    .app .mask {
+      background: url("<%- staticFile('/public/images/showcase/app_mask.png') %>") no-repeat scroll 0 0 / 115px 115px rgba(0, 0, 0, 0);
+      display: block;
+      height: 115px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 115px;
+      z-index: 1;
+    }
+  </style>
+
+  <div id='content'>
+    <div class='panel'>
+      <div class='header'>
+        <ul class='breadcrumb'>
+          <li><a href='/'>主页</a>
+            <span class='divider'>/</span>
+          </li>
+          <li class='active'>showcase</li>
+        </ul>
+      </div>
+      <div class='inner showcase'>
+        <div class="showcase-container">
+          <div class="showcase">
+            <div class="showcase-icon-row row">
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://cnodejs.org/topic/545aee5a3e1f39344c5b3b3e" target="_blank">
+                  <img src="<%- staticFile('/public/images/showcase/cnodejs.png') %>">
+                  <div class="mask"></div>
+                  </a>
+                </div>
+                <h3><a href="https://cnodejs.org/topic/545aee5a3e1f39344c5b3b3e" target="_blank">CNode社区</a></h3>
+                <p>By <a href="http://ionichina.com/user/lanceli">lanceli</a></p>
+                <p><a href="https://github.com/lanceli/cnodejs-ionic">源码</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/us/app/tu-chong-ri-bao-jing-xuan/id950625531?mt=8" target="_blank">
+                  <img src="<%- staticFile('/public/images/showcase/tuchong.png') %>">
+                  <div class="mask"></div>
+                  </a>
+                </div>
+                <h3><a href="https://itunes.apple.com/us/app/tu-chong-ri-bao-jing-xuan/id950625531?mt=8" target="_blank">图虫日报</a></h3>
+                <p>By <a href="http://www.v2ex.com/t/164164">turing</a></p>
+                <p><a href="https://github.com/tuchong/daily">源码</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="http://ghost-client.github.io/ghost-ionic/" target="_blank">
+                            <img src="<%- staticFile('/public/images/showcase/common.png') %>">
+                            <div class="mask"></div>
+                        </a>
+                </div>
+                <h3><a href="http://ghost-client.github.io/ghost-ionic/" target="_blank">GHOST博客</a></h3>
+                <p>By <a href="http://ionichina.com/user/erguotou520">erguotou520</a></p>
+                <p><a href="https://github.com/ghost-client/ghost-ionic">源码</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="http://gugujiankong.com/" target="_blank">
+                <img src="<%- staticFile('/public/images/showcase/gudongjiankong.jpg') %>">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="http://gugujiankong.com/" target="_blank">咕咕监控</a></h3>
+                <p>By <a href="http://ionichina.com/user/ParryQiu">ParryQiu</a></p>
+                <p><a href="https://github.com/ParryQiu/GuGuJianKong">源码</a></p>
+              </div>
+
+            </div>
+            <div class="showcase-icon-row row">
+
+
+
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/cn/app/hipo-zhuan-zhu-zhi-chu-yu/id910176383" target="_blank">
+                  <img src="<%- staticFile('/public/images/showcase/hipo.png') %>">
+                  <div class="mask"></div>
+                  </a>
+                </div>
+                <h3><a href="https://itunes.apple.com/cn/app/hipo-zhuan-zhu-zhi-chu-yu/id910176383" target="_blank">Hipo</a></h3>
+                <p>By <a href="http://ionichina.com/user/yijian166">yijian166</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/cn/app/fang-da-zhang-shang-yi-yuan/id940342362" target="_blank">
+                <img src="<%- staticFile('/public/images/showcase/zhangshangyiyuan.png') %>">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="https://itunes.apple.com/cn/app/fang-da-zhang-shang-yi-yuan/id940342362" target="_blank">方达掌上医院</a></h3>
+                <p>By <a href="http://ionichina.com/user/Gearace">Gearace</a></p>
+              </div>
+
+
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/cn/app/yi-bei-ban-tiao-cao-zhuan/id956458683" target="_blank">
+                <img src="<%- staticFile('/public/images/showcase/yibeiban.png') %>">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="https://itunes.apple.com/cn/app/yi-bei-ban-tiao-cao-zhuan/id956458683" target="_blank">一倍半</a></h3>
+                <p>By <a href="http://ionichina.com/user/jiangxin1980">jiangxin1980</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/cn/app/vart-si-ren-mei-shu-guan/id881580775?mt=8" target="_blank">
+                <img src="http://r.ionichina.com/Fm2WerNag7NWJmOG5WUbvzX-0pJY">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="http://www.vart.cc" target="_blank">VART私人美术馆</a></h3>
+                <p>By <a href="http://ionichina.com/user/chshapple">chshapple</a></p>
+              </div>
+
+
+
+            </div>
+
+            <div class="showcase-icon-row row">
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/cn/app/ke-ji-fan-li-tao-bao-wang/id802627559?mt=8" target="_blank">
+                <img src="http://r.ionichina.com/FlYA4BbJLy5ywiNnKypSbrwvJySY">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="http://www.cosjii.com" target="_blank">可及返利</a></h3>
+                <p>By <a href="http://ionichina.com/user/starrychan">starrychan</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://itunes.apple.com/cn/app/id914798809?mt=8" target="_blank">
+                <img src="http://r.ionichina.com/FkHH08rynNaTSuEF_0qMLby5ZFYz">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="http://www.zouke.com" target="_blank">可及返利</a></h3>
+                <p>By <a href="http://ionichina.com/user/freefish1218">freefish1218</a></p>
+              </div>
+
+              <div data-appid="dd05f7144c75c2394f95" class="app col col-sm-3 ng-isolate-scope" app="">
+                <div class="icon">
+                  <a href="https://www.cnweijiu.com" target="_blank">
+                <img src="http://r.ionichina.com/FoDOYGibcpUBky48LdbijovGe1jf">
+                <div class="mask"></div>
+                </a>
+                </div>
+                <h3><a href="http://www.zouke.com" target="_blank">尾酒网</a></h3>
+                <p>By <a href="http://ionichina.com/user/lonestonewy">lonestonewy</a></p>
+              </div>
+
+            </div>
+
+
+          </div>
+          <div><a href="http://ionichina.com/topic/55954802a2b61ca05f2f3dd2">我也要出现在这里</a></div>
+        </div>
+      </div>
+    </div>
+  </div>

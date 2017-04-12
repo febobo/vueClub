@@ -1,0 +1,40 @@
+<%- partial('../sidebar') %>
+
+<div id='content'>
+  <div class='panel'>
+    <div class='header'>
+      <ul class='breadcrumb'>
+        <li><a href='/'>主页</a><span class='divider'>/</span></li>
+        <li class='active'>关于</li>
+      </ul>
+    </div>
+    <div class='inner topic'>
+      <div class="topic_content">
+        <%- markdown(multiline(function () {
+/*
+### 关于
+
+Vue 中文社区是全球最大的 Vueframework 中文开源技术社区，致力于 Vue 在中国的学习、推广、研究工作。
+
+Vue 中文社区正在努力建设中，如果你有什么想法，欢迎[吐槽](http://www.vue-js.com/?tab=bb)。
+
+
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0c8c6d34109e05094d65da1fb12070bd7f4f7b94fb3ecd61fa2c8a652a4e8594"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="vueJs社区交流讨论2" title="vueJs社区交流讨论2"></a>
+
+群二维码
+
+尽管建了QQ群，但是还是希望大家尽量有问题在社区讨论，这样才可以有一些沉淀和积累，不至于每天都有人在问同样的问题，通过对问题的总结和用文字表达的过程，自己也可以对知识进行一个梳理。
+
+
+
+### 移动客户端
+
+客户端目前正在加急开发中...静请期待
+
+
+*/
+        })) %>
+      </div>
+    </div>
+  </div>
+</div>

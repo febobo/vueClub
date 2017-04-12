@@ -1,0 +1,37 @@
+<%
+  var ads = [
+    {
+      href: 'http://www.ucloud.cn/site/seo.html?utm_source=cost&utm_campaign=Ionichina%E7%A4%BE%E5%8C%BA&utm_medium=display&utm_content=test',
+      label: 'UCloud',
+      img_src: 'http://r.ionichina.com/ucloud-151226.jpg',
+    },
+    {
+      href:'http://doc.vue-js.com/v2/api/',
+      label: 'vue-2.0',
+      img_src: 'https://cloud.githubusercontent.com/assets/9276376/20613464/3b1d1b56-b2ff-11e6-9d66-9ff77d1ebf68.png',
+    },
+    {
+      href:'http://www.react-d.com/api/',
+      label: 'fruit-ui',
+      img_src: 'https://cloud.githubusercontent.com/assets/9276376/18077980/92747c60-6ebb-11e6-9a6c-e65bfe42d45e.png',
+    },
+  ];
+
+  var randomNum = (new Date()).getHours() % ads.length;
+
+  ads = ads.slice(randomNum).concat(ads.slice(0, randomNum));
+%>
+<div class='panel'>
+  <div class='inner ads'>
+
+    <% ads.forEach(function (adObj, idx) { %>
+      <% if (idx !== 0) { %>
+        <div class="sep10"></div>
+      <% } %>
+      <a href="<%-adObj.href%>" target="_blank" class="banner sponsor_outlink"
+    data-label="<%=adObj.label%>">
+        <img src="<%- staticFile(adObj.img_src) %>">
+      </a>
+    <% }) %>
+  </div>
+</div>

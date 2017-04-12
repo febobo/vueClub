@@ -1,0 +1,11 @@
+.DS_STORE
+*.log
+*.iml
+node_modules
+dist
+coverage
+.idea/
+./config.js
+data
+data/*
+public/upload/*
