@@ -1285,14 +1285,19 @@ textarea.editor {
     margin: 0;
     margin-bottom: 10px;
     padding:0 10px;
-    color:@mainColor;
+    // color:@mainColor;
     border-bottom: 3px solid @mainColor;
     .add{
       float: right;
       cursor: pointer;
+      // color: @primaryColor;
+      margin-left: 20px;
       &:hover{
         color: @primaryColor;
       }
+    }
+    .edit{
+
     }
   }
   .main{
@@ -1332,6 +1337,7 @@ textarea.editor {
         &:hover{
           border: 1px solid @mainColor;
           transition: border 0.5 ease;
+          box-shadow: 0px 3px 11px #515151;
           span{
             color: @mainColor;
           }
