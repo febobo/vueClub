@@ -109,6 +109,7 @@ router.get('/api', staticController.api);
 // books
 router.get('/books', books.showBooks);
 router.get('/addbook', books.addBook);
+router.post('/putbook', books.put);
 
 //rss
 router.get('/rss', rss.index);

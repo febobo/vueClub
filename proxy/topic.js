@@ -2,6 +2,7 @@ var EventProxy = require('eventproxy');
 
 var models = require('../models');
 var Topic = models.Topic;
+
 var User = require('./user');
 var Reply = require('./reply');
 var tools = require('../common/tools');
