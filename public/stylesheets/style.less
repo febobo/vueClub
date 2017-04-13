@@ -1274,6 +1274,72 @@ textarea.editor {
   text-align: center;
 }
 
+@bookWidth: 16%;
+@mainColor: #1db802;
+@mainColorHover: #1db602;
+@primaryColor: #0088cc;
+.books{
+  h3{
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 10px;
+    padding:0 10px;
+    color:@mainColor;
+    border-bottom: 3px solid @mainColor;
+    .add{
+      float: right;
+      cursor: pointer;
+      &:hover{
+        color: @primaryColor;
+      }
+    }
+  }
+  .main{
+    ul{
+      margin: 0;
+      li{
+        float:left;
+        width: @bookWidth;
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+        padding:2px;
+        padding-bottom: @bookWidth * 1.45;
+        box-sizing: border-box;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        margin:0.333%;
+        margin-bottom: 15px;
+        .cover{
+          width: 100%;
+          height: 0px;
+          padding-bottom: 128%;
+          overflow: hidden;
+          text-align: center;
+          margin-bottom: 10px;
+          img{
+            max-width: 100%;
+          }
+        }
+        span{
+          display: inline-block;
+          max-width: 90%;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        &:hover{
+          border: 1px solid @mainColor;
+          transition: border 0.5 ease;
+          span{
+            color: @mainColor;
+          }
+        }
+      }
+    }
+  }
+}
 
 /*时间线部分*/
 .history-date ul, .history-date li { list-style:none; margin: 0; padding: 0; }
