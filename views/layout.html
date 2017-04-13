@@ -27,7 +27,7 @@
 
   <!-- style -->
   <%- Loader('/public/stylesheets/index.min.css')
-  .css('/public/libs/bootstrap/css/bootstrap.css')
+  .css('https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
   .css('/public/stylesheets/common.css')
   .css('/public/stylesheets/style.less')
   .css('/public/stylesheets/responsive.css')
@@ -44,7 +44,7 @@
   .js('/public/libs/jquery-2.1.0.js')
   .js('/public/libs/lodash.compat.js')
   .js('/public/libs/jquery-ujs.js')
-  .js('/public/libs/bootstrap/js/bootstrap.js')
+  .js('https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js')
   .js('/public/libs/jquery.caret.js')
   .js('/public/libs/jquery.atwho.js')
   .js('/public/libs/markdownit.js')
@@ -89,7 +89,7 @@ var _hmt = _hmt || [];
         <%}%>
       </a>
 
-      <form id='search_form' class='navbar-search' action="/search">
+      <form id='search_form' class='navbar-search' action="/search" style="display: inline-block;">
         <input type='text' id='q' name='q' class='search-query span3' value=''/>
       </form>
       <ul class='nav pull-right'>
