@@ -3,10 +3,10 @@
 <div id='content'>
   <div class='panel'>
     <div class='header'>
-      <ul class='breadcrumb'>
-        <li><a href='/'>主页</a><span class='divider'>/</span></li>
-        <li class='active'>新消息</li>
-      </ul>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href='/'>主页</a></li>
+        <li class="breadcrumb-item active">新消息</li>
+      </ol>
     </div>
     <% if (typeof(hasnot_read_messages) !== 'undefined' && hasnot_read_messages.length > 0) { %>
     <%- partial('../message/message', { collection: hasnot_read_messages, as: 'message' }) %>
