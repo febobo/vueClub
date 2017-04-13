@@ -77,62 +77,65 @@ var _hmt = _hmt || [];
 </head>
 <body>
 <!-- navbar -->
-<div class='navbar'>
-  <div class='navbar-inner'>
-    <div class='container'>
-      <a class='brand' href='/' style="color : #fff">
-        <% if (config.site_logo) {%>
-          <img src="<%- staticFile(config.site_logo) %>" />
-          Vue.js
-        <%} else {%>
-          <%- config.name %>
-        <%}%>
-      </a>
+<nav class="navbar fixed-top" style="padding:0">
+  <div class="navContainer navbar navbar-toggleable-md navbar-light bg-faded ">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <a class="navbar-brand" href="#"></a> -->
+  <a class='navbar-brand brand' href='/' style="padding:0;color : #fff;margin-right:40px">
+    <% if (config.site_logo) {%>
+      <img src="<%- staticFile(config.site_logo) %>" />
+      Vue.js
+    <%} else {%>
+      <%- config.name %>
+    <%}%>
+  </a>
 
-      <form id='search_form' class='navbar-search' action="/search" style="display: inline-block;">
-        <input type='text' id='q' name='q' class='search-query span3' value=''/>
-      </form>
-      <ul class='nav pull-right'>
-        <li><a href='/'>首页</a></li>
-        <% if (typeof(current_user) !== 'undefined'){ %>
-        <li>
-            <a href='/my/messages'>
-              <% if (current_user.messages_count) { %>
-                <span class='big messages_count'><%= current_user.messages_count %></span>
-              <% } %>
-              未读消息
-            </a>
-        </li>
-        <% } %>
-        <li><a href='http://doc.vue-js.com/'>VUE 2.0</a></li>
-        <li><a href='/books'>书城</a></li>
-        <li><a href='/getstart'>参考资料</a></li>
-        <li><a href='/api'>API</a></li>
-        <%
-        var site_navs = config.site_navs || [];
-        for (var i = 0, l = site_navs.length; i < l; i++) {
-        var nav = site_navs[i];
-        %>
-        <li><a href="<%- nav[0] %>" target="<%- nav[2] %>"><%- nav[1] %></a></li>
-        <% } %>
-        <% if (typeof(current_user) !== 'undefined') { %>
-        <li><a href='/setting'>设置</a></li>
-        <li>
-          <a href='/signout' data-method="post" rel="nofollow">退出</a>
-        </li>
-        <% } else { %>
-        <li><a href='/signup'>注册</a></li>
-        <li><a href='/signin'>登录</a></li>
-        <% } %>
-      </ul>
-      <a class="btn btn-navbar" id="responsive-sidebar-trigger">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <li class="nav-item"><a class="nav-link" href='/'>首页</a></li>
+      <% if (typeof(current_user) !== 'undefined'){ %>
+      <li class="nav-item">
+          <a class="nav-link" href='/my/messages'>
+            <% if (current_user.messages_count) { %>
+              <span class='big messages_count'><%= current_user.messages_count %></span>
+            <% } %>
+            未读消息
+          </a>
+      </li>
+      <% } %>
+      <li class="nav-item"><a class="nav-link" href='http://doc.vue-js.com/'>VUE 2.0</a></li>
+      <li class="nav-item"><a class="nav-link" href='/books'>书城</a></li>
+      <li class="nav-item"><a class="nav-link" href='/getstart'>参考资料</a></li>
+      <li class="nav-item"><a class="nav-link" href='/api'>API</a></li>
+      <%
+      var site_navs = config.site_navs || [];
+      for (var i = 0, l = site_navs.length; i < l; i++) {
+      var nav = site_navs[i];
+      %>
+      <li class="nav-item"><a class="nav-link" href="<%- nav[0] %>" target="<%- nav[2] %>"><%- nav[1] %></a></li>
+      <% } %>
+      <% if (typeof(current_user) !== 'undefined') { %>
+      <li class="nav-item"><a class="nav-link" href='/setting'>设置</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href='/signout' data-method="post" rel="nofollow">退出</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item"><a class="nav-link" href='/signup'>注册</a></li>
+      <li class="nav-item"><a class="nav-link" href='/signin'>登录</a></li>
+      <% } %>
+    </ul>
+    <!-- <form id='search_form' class='navbar-search' action="/search" style="display: inline-block;">
+      <input type='text' id='q' name='q' class='search-query span3' value=''/>
+    </form> -->
+    <form class="form-inline my-2 my-lg-0" id='search_form' action="/search" >
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" type='text' id='q' name='q'>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
-</div>
+  </div>
+</nav>
 <div id='main'>
   <%- body %>
 </div>

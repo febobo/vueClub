@@ -15,19 +15,19 @@
         <strong><%= error %></strong>
       </div>
       <% } %>
-      <form id='signin_form' class='form-horizontal' action='/reset_pass' method='post'>
-        <div class='control-group'>
+      <form id='signin_form' class='form-horizontal form-400' action='/reset_pass' method='post'>
+        <div class='control-group form-group'>
           <label class='control-label' for='psw'>新密码</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='psw' name='psw' size='30' type='password'/>
+            <input class='input-xlarge form-control' id='psw' name='psw' size='30' type='password'/>
           </div>
         </div>
-        <div class='control-group'>
+        <div class='control-group form-group'>
           <label class='control-label' for='repsw'>确认密码</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='repsw' name='repsw' size='30' type='password'/>
+            <input class='input-xlarge form-control' id='repsw' name='repsw' size='30' type='password'/>
           </div>
         </div>
         <input type='hidden' name='_csrf' value='<%= csrf %>'/>

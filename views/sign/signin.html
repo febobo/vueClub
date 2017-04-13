@@ -3,10 +3,10 @@
 <div id='content'>
   <div class='panel'>
     <div class='header'>
-      <ul class='breadcrumb'>
-        <li><a href='/'>主页</a><span class='divider'>/</span></li>
-        <li class='active'>登录</li>
-      </ul>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href='/'>主页</a></li>
+        <li class="breadcrumb-item active">登录</li>
+      </ol>
     </div>
     <div class='inner'>
       <% if(typeof(error) !== 'undefined' && error){ %>
@@ -15,19 +15,18 @@
         <strong><%= error %></strong>
       </div>
       <% } %>
-      <form id='signin_form' class='form-horizontal' action='/signin' method='post'>
-        <div class='control-group'>
+      <form id='signin_form  ' class='form-horizontal form-400' action='/signin' method='post'>
+        <div class='control-group form-group'>
           <label class='control-label' for='name'>用户名</label>
-
           <div class='controls'>
-            <input class='input-xlarge' id='name' name='name' size='30' type='text'/>
+            <input class='input-xlarge form-control form-control' id='name' name='name' size='30' type='text'/>
           </div>
         </div>
-        <div class='control-group'>
+        <div class='control-group form-group'>
           <label class='control-label' for='pass'>密码</label>
 
           <div class='controls'>
-            <input class='input-xlarge' id='pass' name='pass' size='30' type='password'/>
+            <input class='input-xlarge form-control' id='pass' name='pass' size='30' type='password'/>
           </div>
         </div>
         <input type='hidden' name='_csrf' value='<%= csrf %>'/>

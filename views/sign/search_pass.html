@@ -15,15 +15,15 @@
         <strong><%= error %></strong>
       </div>
       <% } %>
-      <form id='search_pass_form' class='form-horizontal' action='/search_pass' method='post'>
-        <div class='control-group'>
+      <form id='search_pass_form' class='form-horizontal form-400' action='/search_pass' method='post'>
+        <div class='control-group form-group'>
           <label class='control-label' for='email'>电子邮箱</label>
 
           <div class='controls'>
             <% if (typeof(email) !== 'undefined') { %>
-            <input class='input-xlarge' id='email' name='email' size='30' type='text' value='<%= email %>'/>
+            <input class='input-xlarge form-control' id='email' name='email' size='30' type='text' value='<%= email %>'/>
             <% } else { %>
-            <input class='input-xlarge' id='email' name='email' size='30' type='text'/>
+            <input class='input-xlarge form-control' id='email' name='email' size='30' type='text'/>
             <% } %>
             <p class='help-block'>请输入您注册帐户时使用的电子邮箱</p>
           </div>
