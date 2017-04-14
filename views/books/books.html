@@ -2,10 +2,29 @@
   <h3>
     Vue书城欢迎您
     <a class="add" href="/addbook">添加书籍</a>
-    <a class="add edit">管理书籍</a>
+    <a class="add edit" href="/bookManage">管理书籍</a>
   </h3>
   <div class="main">
     <ul>
+      <%if(books.length){%>
+        <%for (var i=0;i<books.length;i++){%>
+          <li>
+            <div class="cover">
+              <img src="<%= books[i].url%>" alt="<%= books[i].title%>">
+            </div>
+            <span><%= books[i].title%><br>贡献者：<%= books[i].provider%></span>
+          </li>
+        <%}%>
+        <%}else{%>
+        <p>no data</p>
+        <%}
+      %>
+      <li>
+        <div class="cover">
+          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
+        </div>
+        <span><%= books%></span>
+      </li>
       <li>
         <div class="cover">
           <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">

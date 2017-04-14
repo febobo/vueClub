@@ -21,6 +21,20 @@ exports.addBook = function (req, res, next) {
   });
 };
 
+
+exports.bookManage = function (req, res, next) {
+  Books.getBooks(function(err,books){
+    if(err){
+      console.log(err)
+    }
+
+    res.render('books/bookManage', {
+      pageTitle: 'Vue books manage',
+      books: books
+    });
+  });
+};
+
 exports.put = function (req, res, next) {
   var title = validator.trim(req.body.title);
   title = validator.escape(title);
