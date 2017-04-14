@@ -113,8 +113,8 @@ router.get('/books', books.showBooks);
 router.get('/addbook', books.addBook);
 router.get('/bookManage', books.bookManage);
 router.post('/putbook', books.put);
-router.post('/updateBook', books.updateBook);
-router.post('/deleteBook', books.deleteBook);
+router.post('/updateBook', auth.userRequired, books.updateBook);
+router.post('/deleteBook',auth.userRequired,  books.deleteBook);
 
 //rss
 router.get('/rss', rss.index);
