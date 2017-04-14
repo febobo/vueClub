@@ -26,3 +26,12 @@ exports.updateBook = function (id, callback) {
     books.save(callback)
   })
 };
+
+exports.deleteBook = function (id, callback) {
+  Books.remove({_id:id},function(err,books){
+    if(err){
+      console.log(err);
+    }
+    callback()
+  })
+};

@@ -112,6 +112,7 @@ router.get('/addbook', books.addBook);
 router.get('/bookManage', books.bookManage);
 router.post('/putbook', books.put);
 router.post('/updateBook', books.updateBook);
+router.post('/deleteBook', books.deleteBook);
 
 //rss
 router.get('/rss', rss.index);

@@ -88,5 +88,19 @@ exports.updateBook = function(req, res, next){
       msg: '更新成功'
     })
   })
+}
 
+exports.deleteBook = function(req, res, next){
+  var id = req.body.id;
+  if(!id){
+    return res.send({
+      msg: 'id不能为空'
+    })
+  }
+
+  Books.deleteBook(id, function(){
+    res.send({
+      msg: '删除成功'
+    })
+  })
 }
