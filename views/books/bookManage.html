@@ -1,0 +1,49 @@
+<div class="books">
+  <h3>书籍管理
+    <!-- <a class="add edit">管理书籍</a> -->
+    <a class="add" href="/addbook">添加书籍</a>
+  </h3>
+  <div class="main">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>书名</th>
+          <th>封面</th>
+          <th width="200px">链接</th>
+          <th>提供者</th>
+          <th>状态</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%if(books.length){%>
+          <%for (var i=0;i<books.length;i++){%>
+            <tr>
+              <td><%= books[i].title%></td>
+              <td><img src="<%= books[i].cover%>" alt="<%= books[i].title%>"></td>
+              <td><a href="<%= books[i].url%>" target="_blank"><%= books[i].url%></a></td>
+              <td><%= books[i].provider%></td>
+              <td>
+                <%if(books[i].status){%>
+                  <span >通过</span>
+                  <%}else{%>
+                  <span >待审核</span>
+                <%}%>
+              </td>
+              <td>
+                <%if(books[i].status){%>
+                  <button class="btn btn-danger btn-sm">删除</button>
+                  <%}else{%>
+                  <button class="btn btn-success btn-sm">同意</button>
+                <%}%>
+              </td>
+            </tr>
+          <%}%>
+          <%}else{%>
+          <p>no data</p>
+          <%}
+        %>
+      </tbody>
+    </table>
+  </div>
+</div>
