@@ -20,7 +20,7 @@
           <%for (var i=0;i<books.length;i++){%>
             <tr>
               <td><%= books[i].title%></td>
-              <td><img src="<%= books[i].cover%>" alt="<%= books[i].title%>"></td>
+              <td><img src="<%= books[i].cover%>" alt="<%= books[i].title%>" style="max-width:100px"></td>
               <td><a href="<%= books[i].url%>" target="_blank"><%= books[i].url%></a></td>
               <td><%= books[i].provider%></td>
               <td>
@@ -32,9 +32,9 @@
               </td>
               <td>
                 <%if(books[i].status){%>
-                  <button class="btn btn-danger btn-sm">删除</button>
+                  <button class="btn btn-danger btn-sm" _id="<%= books[i]._id%>" id="delBook">删除</button>
                   <%}else{%>
-                  <button class="btn btn-success btn-sm">同意</button>
+                  <button class="btn btn-success btn-sm" _id="<%= books[i]._id%>" id="okBook">同意</button>
                 <%}%>
               </td>
             </tr>
@@ -48,3 +48,38 @@
     </table>
   </div>
 </div>
+
+
+<script>
+  $('#delBook').on('click', function(){
+    var _id = $(this).attr('_id')
+    $.ajax({
+      url: '/deleteBook',
+      type: 'post',
+      dataType: 'JSON',
+      data: {
+        id: _id
+      },
+      success: function(res){
+        alert(res.msg);
+        location.href = '/bookManage'
+      }
+    })
+  })
+
+  $('#okBook').on('click', function(){
+    var _id = $(this).attr('_id')
+    $.ajax({
+      url: '/updateBook',
+      type: 'post',
+      dataType: 'JSON',
+      data: {
+        id: _id
+      },
+      success: function(res){
+        alert(res.msg);
+        location.href = '/bookManage'
+      }
+    })
+  })
+</script>

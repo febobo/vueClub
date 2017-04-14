@@ -1,32 +1,116 @@
 <div class="books">
-  <h3>Vue书城欢迎您
+    <h3>Vue书城欢迎您
     <a class="add edit">管理书籍</a>
   </h3>
-  <div class="main">
-    <p class="tips">
-      非常感觉您能在百忙之中为百万网友贡献一本您觉得受益非浅的书籍<br>
-      书籍性质：包含计算机技术优先但不限于计算机技术
-    </p>
+    <div class="main">
+        <p class="tips">
+            非常感觉您能在百忙之中为百万网友贡献一本您觉得受益非浅的书籍
+            <br> 审核通过后，您的名字将会展示在书城
+            <br> 审核标准：包含计算机技术优先
+        </p>
 
-    <form class="form-400" style="margin:0">
-      <div class="form-group">
-        <label for="exampleInputEmail1">书名</label>
-        <input type="text" class="form-control" id="book_name" placeholder="书名">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">书籍在线链接</label>
-        <input type="text" class="form-control" id="book_address" placeholder="PDF地址">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">书籍贡献者</label>
-        <input type="text" class="form-control" id="book_provider" placeholder="您的名字将展示在书城">
-      </div>
-      <!-- <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile">
-        <p class="help-block">Example block-level help text here.</p>
-      </div> -->
-      <button type="button" class="btn btn-primary">提 交</button>
-    </form>
-  </div>
+        <form class="form-400" style="margin:0">
+            <div class="form-group">
+                <label for="exampleInputEmail1">书名</label>
+                <input type="text" class="form-control" id="book_name" placeholder="书名">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">书籍在线链接</label>
+                <input type="text" class="form-control" id="book_address" placeholder="PDF地址">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">书籍封面</label>
+                <div id="uploader-demo">
+                    <!--用来存放item-->
+                    <div id="fileList" class="uploader-list"></div>
+                    <div id="filePicker">选择图片</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">书籍贡献者</label>
+                <input type="text" class="form-control" id="book_provider" placeholder="您的名字将展示在书城">
+            </div>
+            <button type="button" class="btn btn-primary" id="saveBook">提 交</button>
+        </form>
+    </div>
 </div>
+
+<!-- markdown editor -->
+<%- Loader('/public/editor.min.js')
+.js('/public/libs/editor/editor.js')
+.js('/public/libs/webuploader/webuploader.withoutimage.js')
+.js('/public/libs/editor/ext.js')
+.done(assets, config.site_static_host, config.mini_assets)
+%>
+<script>
+    var uploader = WebUploader.create({
+        // swf文件路径
+        auto: true,
+        swf: '../../public/libs/webuploader/Uploader.swf',
+        server: '/upload?_csrf=',
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: '#filePicker',
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false
+    });
+
+    var $img;
+    uploader.on( 'fileQueued', function( file ) {
+        var $li = $(
+                '<div id="' + file.id + '" class="file-item thumbnail" style="width:100px">' +
+                    '<img class="previewCover">' +
+                    '<div class="info">' + file.name + '</div>' +
+                '</div>'
+                ),
+            $img = $li.find('img');
+
+
+        // $list为容器jQuery实例
+        $('#fileList').append( $li );
+
+        // 创建缩略图
+        // 如果为非图片文件，可以不用调用此方法。
+        // thumbnailWidth x thumbnailHeight 为 100 x 100
+        uploader.makeThumb( file, function( error, src ) {
+            if ( error ) {
+                $img.replaceWith('<span>不能预览</span>');
+                return;
+            }
+
+            $img.attr( 'src', src );
+        }, 100, 100 );
+    });
+
+    uploader.on( 'uploadSuccess', function( file , res) {
+        $('.previewCover').attr( 'src', res.url );
+    });
+
+
+    $('#saveBook').on('click',function(){
+      var name = $('#book_name').val();
+      var url = $('#book_address').val();
+      var cover = $('.previewCover').attr( 'src');
+      var provider = $('#book_provider').val();
+      if(!name || !url || !cover || !provider){
+        return alert('请填写完整内容')
+      }
+
+      $.ajax({
+        url: '/putbook',
+        type: 'post',
+        dataType: 'JSON',
+        data: {
+          title: name,
+          url: url,
+          provider: provider,
+          cover: cover
+        },
+        success: function(res){
+          alert(res.msg);
+          location.href = '/books'
+        }
+      })
+
+    })
+</script>

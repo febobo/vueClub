@@ -81,7 +81,7 @@
     };
 
     //图片上传工具
-    var ToolImage = function(){
+    var ToolImage = window.ToolImage = function(){
         var self = this;
         this.$win = $([
             '<div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editorToolImageTitle" aria-hidden="true">',
@@ -116,7 +116,6 @@
 
         this.file = false;
         var _csrf = $('[name=_csrf]').val();
-
         this.uploader = WebUploader.create({
             swf: '/public/libs/webuploader/Uploader.swf',
             server: '/upload?_csrf=' + _csrf,
