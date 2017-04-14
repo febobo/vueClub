@@ -15,3 +15,14 @@ exports.getBooks = function (callback) {
     callback(err,books)
   })
 };
+
+exports.updateBook = function (id, callback) {
+  Books.findOne({_id:id},function(err,books){
+    if(err){
+      console.log(err);
+    }
+
+    books.status = 1,
+    books.save(callback)
+  })
+};

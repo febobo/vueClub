@@ -74,3 +74,19 @@ exports.put = function (req, res, next) {
     })
   });
 };
+
+exports.updateBook = function(req, res, next){
+  var id = req.body.id;
+  if(!id){
+    return res.send({
+      msg: 'id不能为空'
+    })
+  }
+
+  Books.updateBook(id, function(){
+    res.send({
+      msg: '更新成功'
+    })
+  })
+
+}

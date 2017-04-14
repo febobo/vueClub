@@ -9,6 +9,7 @@ var BooksSchema = new Schema({
   url: { type: String },
   provider: { type: String },
   cover: { type: String },
+  status: {type: Number, default: 0}
   // top: { type: Boolean, default: false }, // 置顶帖
   // good: {type: Boolean, default: false}, // 精华帖
   // lock: {type: Boolean, default: false}, // 被锁定主题

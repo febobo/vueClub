@@ -111,6 +111,7 @@ router.get('/books', books.showBooks);
 router.get('/addbook', books.addBook);
 router.get('/bookManage', books.bookManage);
 router.post('/putbook', books.put);
+router.post('/updateBook', books.updateBook);
 
 //rss
 router.get('/rss', rss.index);

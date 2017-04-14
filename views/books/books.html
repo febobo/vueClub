@@ -8,65 +8,19 @@
     <ul>
       <%if(books.length){%>
         <%for (var i=0;i<books.length;i++){%>
-          <li>
-            <div class="cover">
-              <img src="<%= books[i].url%>" alt="<%= books[i].title%>">
-            </div>
-            <span><%= books[i].title%><br>贡献者：<%= books[i].provider%></span>
-          </li>
+          <%if(books[i].status){%>
+            <li>
+              <div class="cover">
+                <img src="<%= books[i].url%>" alt="<%= books[i].title%>">
+              </div>
+              <span><%= books[i].title%><br>贡献者：<%= books[i].provider%></span>
+            </li>
+          <%}%>
         <%}%>
         <%}else{%>
-        <p>no data</p>
+        <p class="text-center" style="margin:50px auto">No Data</p>
         <%}
       %>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span><%= books%></span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您<br>贡献者：无训</span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您</span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您</span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您</span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您</span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您</span>
-      </li>
-      <li>
-        <div class="cover">
-          <img src="http://img3.doubanio.com/lpic/s5944797.jpg" alt="">
-        </div>
-        <span>Vue书城欢迎您</span>
-      </li>
     </ul>
   </div>
 </div>
