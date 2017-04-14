@@ -3,10 +3,10 @@
 <div id='content'>
   <div class='panel'>
     <div class='header'>
-      <ul class='breadcrumb'>
-        <li><a href='/'>主页</a><span class='divider'>/</span></li>
-        <li class='active'>设置</li>
-      </ul>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href='/'>主页</a></li>
+        <li class="breadcrumb-item active">设置</li>
+      </ol>
     </div>
     <div class='inner'>
       <% if(typeof(error) !== 'undefined' && error){ %>
@@ -20,7 +20,7 @@
         <strong><%= success %></strong>
       </div>
       <% } %>
-      <form id='setting_form' class='form-horizontal' action='/setting' method='post'>
+      <form id='setting_form' class='form-horizontal' style="padding:30px 200px" action='/setting' method='post'>
         <div class='control-group form-group'>
           <label class='control-label' for='name'>用户名</label>
 
@@ -94,7 +94,7 @@
       <span class='col_fade'>更改密码</span>
     </div>
     <div class='inner'>
-      <form id='change_pass_form' class='form-horizontal' action='/setting' method='post'>
+      <form id='change_pass_form' class='form-horizontal' style="padding:30px 200px" action='/setting' method='post'>
         <div class='control-group form-group'>
           <label class='control-label' for='old_pass'>当前密码</label>
 

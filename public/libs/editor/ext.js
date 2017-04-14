@@ -85,9 +85,9 @@
         var self = this;
         this.$win = $([
             '<div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editorToolImageTitle" aria-hidden="true">',
-                '<div class="modal-header">',
-                    '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>',
+                '<div class="modal-dialog" role="document" style="background:#fff;border-radius:4px; padding:15px;"><div class="modal-header">',
                     '<h3 id="editorToolImageTitle">图片</h3>',
+                    '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>',
                 '</div>',
                 '<div class="modal-body">',
                     '<div class="upload-img">',
@@ -95,7 +95,7 @@
                         '<span class="tip"></span>',
                         '<div class="alert alert-error hide"></div>',
                     '</div>',
-                '</div>',
+                '</div></div>',
             '</div>'
         ].join('')).appendTo($body);
 

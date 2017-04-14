@@ -4,11 +4,11 @@
   <div class='panel'>
     <div class='header'>
       <ol class='breadcrumb'>
-        <li><a href='/'>主页</a><span class='divider'>/</span></li>
+        <li class="breadcrumb-item"><a href='/'>主页</a><span class='divider'>/</span></li>
         <% if(typeof(action) !== 'undefined' && action == 'edit'){ %>
-        <li class='active'>编辑话题</li>
+        <li class='breadcrumb-item active'>编辑话题</li>
         <% }else{ %>
-        <li class='active'>发布话题</li>
+        <li class='breadcrumb-item active'>发布话题</li>
         <% } %>
       </ol>
     </div>
@@ -31,7 +31,7 @@
           <% } %>
           <fieldset>
             <span class="tab-selector">选择版块：</span>
-            <select name="tab" id="tab-value">
+            <select name="tab" id="tab-value" class="form-control">
               <option value="">请选择</option>
               <%
               var tabValue = '';
@@ -47,7 +47,7 @@
               <%});%>
             </select>
             <span id="topic_create_warn"></span>
-            <textarea autofocus class='span9' id='title' name='title' rows='1'
+            <textarea autofocus class='span9 form-control' id='title' name='title' rows='1'
                       placeholder="标题字数 10 字以上"
                     ><%= typeof(title) !== 'undefined' && title || '' %></textarea>
 
