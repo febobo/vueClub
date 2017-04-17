@@ -10,10 +10,12 @@
         <%for (var i=0;i<books.length;i++){%>
           <%if(books[i].status){%>
             <li>
+              <a href="<%= books[i].url%>" target="_blank" style="color:#333">
               <div class="cover">
                 <img src="<%= books[i].cover%>" alt="<%= books[i].title%>">
               </div>
               <span><%= books[i].title%><br>贡献者：<%= books[i].provider%></span>
+              </a>
             </li>
           <%}%>
         <%}%>
