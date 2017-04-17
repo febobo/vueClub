@@ -24,7 +24,7 @@
     <% if (i === current_page) { %>
     <li class='disabled page-item'><a class="page-link"><%= i %></a></li>
     <% } else { %>
-    <li class="page-item"><a href='<%= base_url + i %>'><%= i %></a></li>
+    <li class="page-item"><a class="page-link" href='<%= base_url + i %>'><%= i %></a></li>
     <% } %>
     <% } %>
 
