@@ -899,12 +899,12 @@ textarea#title {
 }
 
 .pagination a {
-  line-height: 30px;
+  // line-height: 30px;
   color: @gray2;
 }
 
 .pagination li.active a {
-  color: @node_green;
+  color: @node_green !important;
 }
 
 .topic_content {
@@ -965,9 +965,10 @@ div[class$=content] > blockquote > p {
   padding: 2px;
 }
 
-#sidebar .inner ol {
+#sidebar .inner ol, #sidebar .inner ul{
   margin: 4px 0px;
   list-style: none;
+  padding-left: 0;
 }
 
 .top_score {
