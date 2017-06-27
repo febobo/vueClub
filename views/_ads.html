@@ -1,9 +1,9 @@
 <%
   var ads = [
     {
-      href: 'http://www.ucloud.cn/site/seo.html?utm_source=cost&utm_campaign=Ionichina%E7%A4%BE%E5%8C%BA&utm_medium=display&utm_content=test',
-      label: 'UCloud',
-      img_src: 'http://r.ionichina.com/ucloud-151226.jpg',
+      href: '/nav.html',
+      label: 'web navigation',
+      img_src: 'https://user-images.githubusercontent.com/9276376/27581837-70cf9944-5b61-11e7-8d76-72cfc3856dad.png',
     },
     {
       href:'http://doc.vue-js.com/v2/api/',
@@ -17,10 +17,8 @@
     },
   ];
 
-  var randomNum = (new Date()).getHours() % ads.length;
-
-  ads = ads.slice(randomNum).concat(ads.slice(0, randomNum));
 %>
+
 <div class='panel'>
   <div class='inner ads'>
 

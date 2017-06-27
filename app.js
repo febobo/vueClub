@@ -84,6 +84,7 @@ app.use(auth.blockUser());
 
 app.use(Loader.less(__dirname));
 app.use('/public', express.static(staticDir));
+app.use('/', express.static(path.join(__dirname, '')));
 
 if (!config.debug) {
   app.use(function (req, res, next) {
