@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Front End Nav</title>
+    <meta name="keywords" content="Web前端导航, vueJS, vue2.0, vue 中文社区">
+    <meta name="description" content="Web前端导航, vueJS, vue2.0, vue 中文社区">
+</head>
+
+<body>
+    <div>
+        <div class="left">
+          <h1 class="title">Web前端导航</h1>
+          <ul class="navbar">
+            <li><a href="">团队组织</a></li>
+          </ul>
+          <div class="submit"><a href="https://github.com/febobo/vueClub/issues/new">提交导航>></a></div>
+        </div>
+        <div class="main">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    body,
+    ul,
+    li,
+    img,
+    h1,
+    div,
+    h3 {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-weight: normal;
+        box-sizing: border-box;
+    }
+
+    a:active,
+    a:hover,
+    a:link,
+    a:visited {
+        text-decoration: none;
+    }
+
+    body {
+        background: #eee;
+        font-family: cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+    }
+
+    .left {
+        width: 228px;
+        height: 100%;
+        background: #333;
+        color: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow-y: scroll;
+    }
+    .left .title{
+      width: 228px;;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+      border-bottom: 1px solid #2e2a2a;
+      position: fixed;
+      top:0;
+      background: #333;
+    }
+    .left .submit{
+      width: 228px;;
+      line-height: 36px;
+      padding-left: 60px;
+      font-size: 14px;
+      border-top: 1px solid #2e2a2a;
+      position: fixed;
+      bottom:0;
+      background: #333;
+    }
+    .left .submit a{
+      color: #ddd
+    }
+
+    .navbar{
+      padding: 60px 0;
+    }
+    .navbar li{
+      line-height: 36px;
+      padding-left: 60px;
+      color:#fff;
+    }
+    .navbar li a{
+      color:#fff;
+      font-size: 14px;
+    }
+
+    .main {
+        height: 100%;
+        padding: 15px;
+        margin-left: 228px;
+    }
+
+    .category {
+        background: #fff;
+        padding: 15px;
+    }
+
+    .category_name {
+        line-height: 36px;
+        color: #333;
+    }
+
+    .category .list{
+      overflow: hidden;
+    }
+
+    .category .list .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        /*justify-content: center;*/
+    }
+
+    .category .list .title img {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+    }
+
+    .category .list .title h3 {
+        font-size: 15px;
+        color: #3273dc;
+        display: inline-block;
+    }
+
+    .category .list li {
+        width: 23%;
+        height: 128px;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid #d3d3d3;
+        box-shadow: 1px 1px 15px #d3d3d3;
+        float: left;
+        margin:0 1% 1% 0;
+    }
+
+    .desc {
+        font-size: 12px;
+        color: #ccc;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .qrcode_content{
+      padding-top: 20px !important;
+      text-align: center;
+      height: 200px !important;
+    }
+    .qrcode_content  h3 {
+      text-align: center;
+      width: 100%;
+    }
+    .qrcode img{
+      width: 120px;
+      height: 120px;
+      /*margin: 20px;*/
+    }
+</style>
+
+<script type="text/javascript" src="./nav.js"></script>
+<script>
+
+  let renderItem = (data) => {
+    let listStr = '';
+    if(data){
+      for(let j= 0; j< data.length; j++){
+        let item = data[j];
+        listStr += `<li id=${item.id}>
+                      <a href="${item.url}">
+                          <div class="title">
+                              <img src="${item.logo && item.logo.url}" alt="logo">
+                              <h3>${item.name}</h3>
+                          </div>
+                          <div class="desc">
+                              ${item.desc}
+                          </div>
+                      </a>
+                    </li>`
+      }
+    }
+    return listStr
+  }
+
+  let renderQrcode = (data) => {
+    let listStr = '';
+    if(data){
+      for(let j= 0; j< data.length; j++){
+        let item = data[j];
+        listStr += `<li id=${item.id} class="qrcode_content">
+                        <div class="title">
+                            <h3>${item.name}</h3>
+                        </div>
+                        <div class="qrcode">
+                          <img src="${item.qrcode}" alt="" />
+                        </div>
+                        <div class="desc">
+                            微信号: ${item.id}
+                        </div>
+                    </li>`
+      }
+    }
+    return listStr
+  }
+
+  let renderList = (navData)=>{
+    let categoryStr = listStr = '';
+    if(navData){
+      for(let i= 0; i< navData.length; i++){
+        let nav = navData[i];
+        categoryStr += `<div class="category" id="${nav.id}">
+                          <h3 class="category_name">${nav.name}</h3>
+                          <ul class="list" id="list">
+                            ${nav.id === 'wechatSubscription' ? renderQrcode(nav.list) : renderItem(nav.list) }
+                          </ul>
+                        </div>`
+      }
+    }
+    return categoryStr;
+  }
+
+  let renderNavbar = (navData)=>{
+    let navbarStr = '';
+    if(navData){
+      for(let i= 0; i< navData.length; i++){
+        let nav = navData[i];
+        navbarStr += `<li><a href="#${nav.id}" >${nav.name}</a></li>`
+      }
+    }
+    return navbarStr;
+  }
+
+
+  let main = document.querySelector('.main');
+  main.innerHTML = renderList(navData);
+
+  let navbar = document.querySelector('.navbar');
+  navbar.innerHTML = renderNavbar(navData);
+</script>
