@@ -38,9 +38,21 @@
   </div>
   <% } %>
 
+  <div class="panel">
+    <div class='inner ads'>
+        <a href="weekly.vue-js.com" target="_blank" class="banner sponsor_outlink"
+      data-label="">
+          <img src="https://user-images.githubusercontent.com/9276376/28812933-a824ffaa-76c9-11e7-8be6-3adb78b9fd48.png">
+        </a>
+    </div>
+  </div>
+
+
   <% if (typeof(current_user) === 'undefined' || !current_user.isAdvanced) { %>
     <%- partial('./_ads') %>
   <% } %>
+
+
 
   <% if (typeof(no_reply_topics) !== 'undefined') { %>
   <div class='panel'>
@@ -107,6 +119,11 @@
         <li>
           <a href="http://www.hubwiz.com/" target="_blank">
             汇智网
+          </a>
+        </li>
+        <li>
+          <a href="https://www.w3cvip.org" target="_blank">
+            w3c社区-前端专业综合性技术交流平台
           </a>
         </li>
       </ol>
