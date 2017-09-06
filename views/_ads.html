@@ -1,19 +1,29 @@
 <%
   var ads = [
     {
+      href:'http://www.hubwiz.com/course/',
+      label: 'vue-2.0',
+      img_src: 'https://user-images.githubusercontent.com/9276376/30099048-01651f78-9317-11e7-9974-1f834377c971.png',
+    },
+    {
       href: '/nav.html',
       label: 'web navigation',
       img_src: 'https://user-images.githubusercontent.com/9276376/27581837-70cf9944-5b61-11e7-8d76-72cfc3856dad.png',
     },
     {
-      href:'http://doc.vue-js.com/v2/api/',
-      label: 'vue-2.0',
-      img_src: 'https://cloud.githubusercontent.com/assets/9276376/20613464/3b1d1b56-b2ff-11e6-9d66-9ff77d1ebf68.png',
-    },
-    {
       href:'http://www.react-d.com/api/',
       label: 'fruit-ui',
       img_src: 'https://cloud.githubusercontent.com/assets/9276376/18077980/92747c60-6ebb-11e6-9a6c-e65bfe42d45e.png',
+    },
+    {
+      href:'http://weekly.vue-js.com/#/',
+      label: 'weekly',
+      img_src: 'https://user-images.githubusercontent.com/9276376/30099651-eb36c06a-9318-11e7-8987-2da1bb2b3e13.png',
+    },
+    {
+      href:'https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=m5qa9mqc&utm_source=m5qa9mqc',
+      label: 'fruit-ui',
+      img_src: 'https://user-images.githubusercontent.com/9276376/30099311-fd5c02f6-9317-11e7-8103-abb77c02fb40.png',
     },
   ];
 
@@ -28,7 +38,7 @@
       <% } %>
       <a href="<%-adObj.href%>" target="_blank" class="banner sponsor_outlink"
     data-label="<%=adObj.label%>">
-        <img src="<%- staticFile(adObj.img_src) %>">
+        <img src="<%- staticFile(adObj.img_src) %>" style="width:100%;height:45px;">
       </a>
     <% }) %>
   </div>

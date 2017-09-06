@@ -38,16 +38,6 @@
   </div>
   <% } %>
 
-  <div class="panel">
-    <div class='inner ads'>
-        <a href="weekly.vue-js.com" target="_blank" class="banner sponsor_outlink"
-      data-label="">
-          <img src="https://user-images.githubusercontent.com/9276376/28812933-a824ffaa-76c9-11e7-8be6-3adb78b9fd48.png">
-        </a>
-    </div>
-  </div>
-
-
   <% if (typeof(current_user) === 'undefined' || !current_user.isAdvanced) { %>
     <%- partial('./_ads') %>
   <% } %>
