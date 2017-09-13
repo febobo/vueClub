@@ -105,6 +105,7 @@ var _hmt = _hmt || [];
         </li>
         <% } %>
         <li><a href='http://www.hubwiz.com/course/'>视频课程</a></li>
+        <li><a class="goWechat" data-toggle="modal" data-target="#wechat">微信公众号</a></li>
         <li><a href='http://doc.vue-js.com/'>VUE 2.0</a></li>
         <li><a href='/getstart'>参考资料</a></li>
         <li><a href='/api'>API</a></li>
@@ -135,6 +136,15 @@ var _hmt = _hmt || [];
 </div>
 <div id='main'>
   <%- body %>
+  <div id="wechat" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+      <div class="wechatbox">
+        <img src="https://user-images.githubusercontent.com/9276376/30367105-de95534e-989f-11e7-8c43-039222352121.png" alt="wechat">
+        <p>Vue中文社区 独家公众号，面向前端爱好者， 每日更新最有料的文章，最前沿的资讯,内容包含但不限于Vue,React,Angular,前端工程化...等各种"大保健"知识点,右上角点关注,老司机带你弯道超车,不定期更有各种福利赠送 <br><br>
+        <span>👈🏼 亲,微信扫一扫奴家</span> </p>
+      </div>
+    </div>
+  </div>
 </div>
 <div id='backtotop'>回到顶部</div>
 <div id='footer'>
