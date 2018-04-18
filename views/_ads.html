@@ -23,13 +23,23 @@
   ];
 
 %>
-
+<div class='new_panel'>
+    <!- 2018/04/19 ->
+  <div class='inner new_ads'>
+      <img onclick="_hmt.push(['_trackEvent','juejinbooks', 'advs', 'click']);window.location.href='http://t.cn/Rm1JXoJ'" src="http://ooaa8syjw.bkt.clouddn.com/FotsBDwJH7eH6Gnvgdb786UgLAAj">
+      <a href="mailto:vueclub@126.com?subject=赞助vue中文社区" target="_blank">赞助商</a>
+  </div>
+  <div class='inner new_ads'>
+    <img onclick="_hmt.push(['_trackEvent','zhufeng', 'advs', 'click']);window.location.href='http://www.zhufengpeixun.cn/main/course/index.html?ref=zb'" src="http://ooaa8syjw.bkt.clouddn.com/FvhctjLHyPoeNGlanoZeFz0DE1LS">
+    <a href="mailto:vueclub@126.com?subject=赞助vue中文社区" target="_blank">赞助商</a>
+  </div>
+</div>
 <div class='panel'>
   <div class='inner ads'>
 
     <% ads.forEach(function (adObj, idx) { %>
       <% if (idx !== 0) { %>
-        <div class="sep10"></div>
+        <div class="sep5"></div>
       <% } %>
       <a href="<%-adObj.href%>" target="_blank" class="banner sponsor_outlink"
     data-label="<%=adObj.label%>">
@@ -38,3 +48,13 @@
     <% }) %>
   </div>
 </div>
+
+<script>
+  $(window).on('scroll', function(){
+    if($(window).scrollTop() > $('.new_panel').offset().top){
+      $('.new_panel').addClass('fixed-advs');  
+    }else if($(window).scrollTop() < 254){
+      $('.new_panel').removeClass('fixed-advs');  
+    }
+  })
+</script>
