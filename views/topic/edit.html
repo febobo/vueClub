@@ -78,13 +78,23 @@
 <%- Loader('/public/editor.min.js')
 .js('/public/libs/editor/editor.js')
 .js('/public/libs/webuploader/webuploader.withoutimage.js')
+.js('https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js')
 .js('/public/libs/editor/ext.js')
 .done(assets, config.site_static_host, config.mini_assets)
 %>
 <script>
   (function () {
     var editor = new Editor();
-    editor.render($('.editor')[0]);
+    editor.render($('.editor')[0],
+    {
+        lineNumbers: true,     // 显示行数
+        indentUnit: 4,         // 缩进单位为4
+        styleActiveLine: true, // 当前行背景高亮
+        matchBrackets: true,   // 括号匹配
+        mode: 'htmlmixed',     // HMTL混合模式
+        lineWrapping: true,    // 自动换行
+        theme: 'monokai',      // 使用monokai模版
+    });
 
     // 版块选择的检查，必须选择
     $('#create_topic_form').on('submit', function (e) {

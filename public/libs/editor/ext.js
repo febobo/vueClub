@@ -1,14 +1,24 @@
-(function(Editor, markdownit, WebUploader){
+(function(Editor, markdownit, WebUploader, hljs){
+    console.log(hljs,22)
     // Set default options
     var md = new markdownit();
 
     md.set({
-      html:         false,        // Enable HTML tags in source
+      html:         true,        // Enable HTML tags in source
       xhtmlOut:     false,        // Use '/' to close single tags (<br />)
       breaks:       true,        // Convert '\n' in paragraphs into <br>
       langPrefix:   'language-',  // CSS language prefix for fenced blocks
-      linkify:      false,        // Autoconvert URL-like text to links
+      linkify:      true,        // Autoconvert URL-like text to links
       typographer:  false,        // Enable smartypants and other sweet transforms
+      highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value;
+          } catch (__) {}
+        }
+    
+        return ''; // use external default escaping
+      }
     });
 
     window.markdowniter = md;
@@ -243,4 +253,4 @@
         var line = cm.lastLine();
         cm.setLine(line, cm.getLine(line) + txt);
     };
-})(window.Editor, window.markdownit, window.WebUploader);
+})(window.Editor, window.markdownit, window.WebUploader, window.hljs);
