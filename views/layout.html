@@ -146,6 +146,19 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
+  <div id="zfb_hb" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"     style="width: 300px;
+  margin-left: -150px;">
+    <div class="modal-body" style="max-height: 10000px !important">
+      <div class="">
+        <div style="font-size: 16px;
+        margin-bottom: 15px; text-align: center">
+          支付宝每天领红包,当天领了当天花
+        </div>
+        <img src="http://static.vue-js.com/Fo115GXk1rdnBmBNGYQjoNodxBZy" alt="wechat" style="width: 300px">
+      </div>
+    </div>
+  </div>
+  
 </div>
 <div id='backtotop'>回到顶部</div>
 <div id='footer'>
@@ -173,6 +186,20 @@ var _hmt = _hmt || [];
 
   ga('create', '<%-config.google_tracker_id%>', 'auto');
   ga('send', 'pageview');
+
+
+  var endTime = new Date('2018/12/31').getTime()
+  var nowTime = new Date().getTime()
+  if(nowTime < endTime){
+    var isAlertZfb = localStorage.getItem('isAlertZfb') 
+    var isAlertZfb_time = localStorage.getItem('isAlertZfb_time') 
+    if(!isAlertZfb || (isAlertZfb && isAlertZfb_time != new Date().getDate()) ){
+      $('#zfb_hb').modal()
+      localStorage.setItem('isAlertZfb', true);
+      localStorage.setItem('isAlertZfb_time', new Date().getDate());
+    }
+  }
+
 </script>
 <% } %>
 
