@@ -70,7 +70,7 @@ app.use(session({
   store: new MongoStore({
    // url: config.db
     db: 'vue_club_dev',
-    port:10086
+    port: 13800
   }),
   resave: true,
   saveUninitialized: true,

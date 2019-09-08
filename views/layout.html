@@ -140,9 +140,15 @@ var _hmt = _hmt || [];
   <div id="wechat" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-body">
       <div class="wechatbox">
-        <img src="https://user-images.githubusercontent.com/9276376/30367105-de95534e-989f-11e7-8c43-039222352121.png" alt="wechat">
-        <p>Vue中文社区 独家公众号，面向前端爱好者， 每日更新最有料的文章，最前沿的资讯,内容包含但不限于Vue,React,Angular,前端工程化...等各种"大保健"知识点,右上角点关注,老司机带你弯道超车,不定期更有各种福利赠送 <br><br>
-        <span>👈🏼 亲,微信扫一扫奴家</span> </p>
+        <img style="flex: 0 0 80px;
+        width: 120px;
+        height: 120px;" src="http://static.vue-js.com/FgNX5y__B9wBEDnFJtRWeEDd7Xjq" alt="wechat">
+        <p style="line-height: 15px">
+          还没有找到组织?<br><br>
+          公众号回复加群找到组织 <br><br>
+          加群成功后即可获取高级前端进阶视频一套 <br><br>
+          ＋ 全网最全前端电子书一套
+        </p>
       </div>
     </div>
   </div>
@@ -188,13 +194,13 @@ var _hmt = _hmt || [];
   ga('send', 'pageview');
 
 
-  var endTime = new Date('2018/12/31').getTime()
+  var endTime = new Date('2019/09/10').getTime()
   var nowTime = new Date().getTime()
   if(nowTime < endTime){
     var isAlertZfb = localStorage.getItem('isAlertZfb') 
     var isAlertZfb_time = localStorage.getItem('isAlertZfb_time') 
     if(!isAlertZfb || (isAlertZfb && isAlertZfb_time != new Date().getDate()) ){
-      $('#zfb_hb').modal()
+      $('#wechat').modal()
       localStorage.setItem('isAlertZfb', true);
       localStorage.setItem('isAlertZfb_time', new Date().getDate());
     }
