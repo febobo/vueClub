@@ -36,7 +36,7 @@
     "mongoose": "3.8.23",
     "multiline": "1.0.1",
     "newrelic": "1.16.1",
-    "node-uuid": "1.4.1",
+    "node-uuid": "1.4.8",
     "nodemailer": "1.8.0",
     "nodemailer-smtp-transport": "1.0.3",
     "passport": "0.1.18",
